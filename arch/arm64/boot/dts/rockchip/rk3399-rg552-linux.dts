@@ -248,13 +248,6 @@
 			};
 
 	};
-        vibrator {
-                compatible = "pwm-vibrator";
-                pwms = <&pwm3 0 200000000 0>;
-                pwm-names = "enable";
-                //direction-duty-cycle-ns = <500000>;
-		vcc-supply = <&vcc5v0_sys>;
-        };
 	
 	es8316-sound {
 		compatible = "simple-audio-card";
@@ -726,6 +719,7 @@
 
 &pwm3 {
 	status = "okay";
+	label = "rumble-pwm";
 };
 
 &saradc {
