@@ -245,7 +245,7 @@ static const struct drm_display_mode sharp_ls054_mode = {
 	.vtotal		= 1920 + 3 + 3 + 4,
 	.width_mm	= 70,
 	.height_mm	= 117,
-	.flags		= DRM_MODE_FLAG_NHSYNC | DRM_MODE_FLAG_NVSYNC,
+//	.flags		= DRM_MODE_FLAG_NHSYNC | DRM_MODE_FLAG_NVSYNC,
 };
 
 static int sharp_ls054_get_modes(struct drm_panel *panel,
