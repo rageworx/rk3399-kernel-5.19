@@ -92,7 +92,7 @@ static const struct snd_kcontrol_new es8316_snd_controls[] = {
 		       4, 0, 11, 0, hpmixer_gain_tlv),
 
 	SOC_ENUM("Playback Polarity", dacpol),
-	SOC_DOUBLE_R_TLV("DAC Playback Volume", ES8316_DAC_VOLL,
+	SOC_DOUBLE_R_TLV("Master Playback Volume", ES8316_DAC_VOLL,
 			 ES8316_DAC_VOLR, 0, 0xc0, 1, dac_vol_tlv),
 	SOC_SINGLE("DAC Soft Ramp Switch", ES8316_DAC_SET1, 4, 1, 1),
 	SOC_SINGLE("DAC Soft Ramp Rate", ES8316_DAC_SET1, 2, 4, 0),
