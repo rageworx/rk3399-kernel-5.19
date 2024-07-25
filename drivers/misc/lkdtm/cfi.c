@@ -47,6 +47,7 @@ static void lkdtm_CFI_FORWARD_PROTO(void)
  * This can stay local to LKDTM, as there should not be a production reason
  * to disable PAC && SCS.
  */
+#ifdef GNU_PROPERTY_AARCH64_FEATURE_1_BTI
 #ifdef CONFIG_ARM64_PTR_AUTH_KERNEL
 # ifdef CONFIG_ARM64_BTI_KERNEL
 #  define __no_pac             "branch-protection=bti"
@@ -57,6 +58,9 @@ static void lkdtm_CFI_FORWARD_PROTO(void)
 #else
 # define __no_ret_protection   __noscs
 #endif
+#else
+# define __no_ret_protection   __noscs
+#endif /// of GNU_PROPERTY_AARCH64_FEATURE_1_BTI
 
 #define no_pac_addr(addr)      \
 	((__force __typeof__(addr))((uintptr_t)(addr) | PAGE_OFFSET))
